@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/><meta name="theme-color" content="#04060e"/><title>AfiliadoAI PRO</title><style>*{margin:0;padding:0}body{background:#04060e}</style>  <meta name="theme-color" content="#00ddb4"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="AfiliadoAI"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <link rel="apple-touch-icon" href="/icon-192.png"/>
+  <style>body{background:#04060e;margin:0;}#splash{position:fixed;inset:0;background:#04060e;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s;}#splash.hide{opacity:0;pointer-events:none;}</style>
+</head><body><div id="splash"><div style="width:68px;height:68px;background:linear-gradient(135deg,#00ddb4,#4b8ef8);border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:0 8px 32px #00ddb440;margin-bottom:20px;">⚡</div><div style="color:#fff;font-weight:900;font-size:28px;letter-spacing:-1px;">AfiliadoAI</div><div style="background:#00ddb4;color:#000;font-size:10px;font-weight:800;padding:3px 12px;border-radius:99px;margin-top:8px;letter-spacing:1.5px;">PRO</div></div>
+  <div id="root"></div>
+  <script>
+    // Splash screen
+    window.addEventListener("load", () => {
+      setTimeout(() => { const s = document.getElementById("splash"); if(s) s.classList.add("hide"); setTimeout(()=>{if(s)s.remove();},500); }, 1200);
+    });
+    // Service Worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js").catch(()=>{});
+    }
+  </script>
+</body></html>
